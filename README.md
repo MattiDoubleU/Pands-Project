@@ -5,8 +5,7 @@
 Student at [ATU] (https://www.atu.ie/).
 
 ![Iris setosa](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)
-![Iris versicolor](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_versicolor_3.jpg)
-![Iris virginica](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_virginica.jpg)
+
 
 ## About this project
 
@@ -18,6 +17,7 @@ The Iris flower data set or Fisher's Iris data set is a multivariate data set us
 
 The data set is an excellent base to explore and demonstrate the following items:
 
+*tba
 
 
 
@@ -25,4 +25,13 @@ The data set is an excellent base to explore and demonstrate the following items
 
 # References and further readings:
 
-Iris flower data set https://en.wikipedia.org/wiki/Iris_flower_data_set
+Iris flower data set: https://en.wikipedia.org/wiki/Iris_flower_data_set.
+Overview of seaborn plotting functions: https://seaborn.pydata.org/tutorial/function_overview.html
+Directing print output to a .txt file: https://stackoverflow.com/questions/36571560/directing-print-output-to-a-txt-file
+November 27, 2022 by Shikha Mishra, print entire dataframe panda – Python Pandas: How to display full Dataframe i.e. print all rows & columns without truncation https://btechgeeks.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/
+
+
+
+
+![Iris versicolor](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_versicolor_3.jpg)
+![Iris virginica](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_virginica.jpg)
