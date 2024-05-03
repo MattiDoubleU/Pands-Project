@@ -4,7 +4,11 @@
 
 Student at [ATU] (https://www.atu.ie/).
 
+<img src="https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg" width="300" height="600">
+
 ![Iris setosa](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)
+![Iris versicolor](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_versicolor_3.jpg)
+![Iris virginica](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_virginica.jpg)
 
 
 ## About this project
@@ -17,7 +21,9 @@ The Iris flower data set or Fisher's Iris data set is a multivariate data set us
 
 The data set is an excellent base to explore and demonstrate the following items:
 
-*tba
+# tba
+* tba
+* tba
 
 
 
