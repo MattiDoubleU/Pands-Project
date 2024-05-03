@@ -1,4 +1,28 @@
 # pands-project
 
-The discription of the project can be found here:
-https://atu-main-mdl-euwest1.s3.eu-west-1.amazonaws.com/66/82/6682ae48f67ebab9c769ddae345221f3d6405bfe?response-content-disposition=inline%3B%20filename%3D%22Project%202024.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWRN6GJFLWCMOG6H7%2F20240418%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240418T203520Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21580&X-Amz-Signature=0cc8623968bbc7f8bff30e47adedf065f62a0a0ad6042b11ebe03712563e8f29
+**by Matthias Wiedemann**
+
+Student at [ATU] (https://www.atu.ie/).
+
+![Iris setosa](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg)
+![Iris versicolor](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_versicolor_3.jpg)
+![Iris virginica](https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_virginica.jpg)
+
+## About this project
+
+This [project](https://atu-main-mdl-euwest1.s3.eu-west-1.amazonaws.com/66/82/6682ae48f67ebab9c769ddae345221f3d6405bfe?response-content-disposition=inline%3B%20filename%3D%22Project%202024.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWRN6GJFLWCMOG6H7%2F20240503%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240503T150953Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21547&X-Amz-Signature=acbfbd441db6e3cd56ef3e3b9fcc1c2b1921963e00667cebf1c714bd8cd504a6) for the Programming and Scripting module is my analysis on the widely available [Iris flower data set](https://archive.ics.uci.edu/dataset/53/iris).
+
+
+
+The Iris flower data set or Fisher's Iris data set is a multivariate data set used and made famous by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis (https://en.wikipedia.org/wiki/Iris_flower_data_set#cite_note-anderson35-3).
+
+The data set is an excellent base to explore and demonstrate the following items:
+
+
+
+
+
+
+# References and further readings:
+
+Iris flower data set https://en.wikipedia.org/wiki/Iris_flower_data_set
