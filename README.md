@@ -33,15 +33,25 @@ The data set is an excellent base to explore and demonstrate the following items
 # References and further readings:
 
 Iris flower data set: https://en.wikipedia.org/wiki/Iris_flower_data_set.
+
 January 27, 2022 Awais Naeem, Iris Dataset Classification using Support Vector Machine, Random Forest, and Gradient Boosting Classifier https://www.embedded-robotics.com/iris-dataset-classification/.
+
 Overview of seaborn plotting functions: https://seaborn.pydata.org/tutorial/function_overview.html.
+
 Directing print output to a .txt file: https://stackoverflow.com/questions/36571560/directing-print-output-to-a-txt-file.
+
 November 27, 2022 by Shikha Mishra, print entire dataframe panda – Python Pandas: How to display full Dataframe i.e. print all rows & columns without truncation https://btechgeeks.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/.
+
 Plotting Histogram in Python using Matplotlib: https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/.
-seaborn.pairplot https://seaborn.pydata.org/generated/seaborn.pairplot.html
-Create specific plots using Pandas and then store them as PNG files: https://stackoverflow.com/questions/64542466/how-to-create-specific-plots-using-pandas-and-then-store-them-as-png-files
-matplotlib.pyplot.hist https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html
-Histograms https://matplotlib.org/stable/gallery/statistics/hist.html
-Histograms in Matplotlib https://www.datacamp.com/tutorial/histograms-matplotlib
+
+seaborn.pairplot https://seaborn.pydata.org/generated/seaborn.pairplot.html.
+
+Create specific plots using Pandas and then store them as PNG files: https://stackoverflow.com/questions/64542466/how-to-create-specific-plots-using-pandas-and-then-store-them-as-png-files.
+
+matplotlib.pyplot.hist https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html.
+
+Histograms https://matplotlib.org/stable/gallery/statistics/hist.html.
+
+Histograms in Matplotlib https://www.datacamp.com/tutorial/histograms-matplotlib.
 
 
