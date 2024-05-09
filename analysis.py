@@ -10,6 +10,13 @@ import matplotlib.pyplot as plt
 # Numerical arrays.
 import numpy as np
 
+# I kept getting the following warning: UserWarning: The figure layout has changed to tight self._figure.tight_layout(*args, **kwargs). 
+# It's a warning so the pair plot (line 154) would still generate though it's cleaner without it. I found out that apparently there's a bug and I would need to install
+# matplotlib 3.7.3 (mine is 3.7.2): https://stackoverflow.com/questions/76901874/userwarning-the-figure-layout-has-changed-to-tight-self-figure-tight-layouta but I also researched a quick fix:
+
+import warnings                                # https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings.
+warnings.filterwarnings('ignore')
+
 # Load Data: We we will use df to define data frame.
 df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
 
@@ -19,10 +26,7 @@ df = sns.load_dataset('iris')
 entire_df = df.to_string()
 
 # Show.
-df.to_string()
-
-# Inspect data types:
-print(df.dtypes)
+print(entire_df)
 
 # Group the DataFrame by 'species' and count the number of occurrences. This code was proposed by ChatGPT.
 species_counts = df.groupby(['species']).size().reset_index(name='count')
@@ -30,17 +34,21 @@ species_counts = df.groupby(['species']).size().reset_index(name='count')
 print("Number of samples for each species:")
 print(species_counts)
 
+# Inspect data types:
+print(df.dtypes)
+
 # Return a statistically description of the data in df:
 summary_stats = df.describe()
+print(summary_stats)
 
 # Save summary and statistics to a text file:
 with open("summary.txt", "w") as f:     # changed "a" append to "w" (write) so after each iteration the file is overwritten.
     print(entire_df, file=f)
-    print(summary_stats, file=f)
-    print(df.dtypes, file=f)
     print("Number of samples for each species:", file=f)
     print(species_counts, file=f) 
-
+    print(summary_stats, file=f)
+    print(df.dtypes, file=f)
+    
 
 # In order to be able to create plots on the data we need to set variables and transform the data to numpy array. Let's begin with the petal lengths.
 plen = df['petal_length']
@@ -138,6 +146,16 @@ plt.legend()
 
 # Save to png
 plt.savefig('sepal_length_histogram.png')
+
+# Show plot
+plt.show()
+
+
+# Pairplot
+sns.pairplot(df, hue='species', palette='viridis')
+
+# Save to png
+plt.savefig('pair_plot_all_variables')
 
 # Show plot
 plt.show()
