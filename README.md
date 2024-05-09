@@ -14,8 +14,8 @@ The Iris flower data set or Fisher's Iris data set is a multivariate data set us
 
 Upon execution of the code, it will generate the following outputs:
 
-    The code will compile the items into a text file named "summary.txt."
-    The graphical representations corresponding to items 2 and 3 will be saved as .png image files.
+* 1. The code will compile the items into a text file named "summary.txt."
+* 2. The graphical representations corresponding to items 2 and 3 will be saved as .png image files.
 
 We will use the outputs to explore and demonstrate the following items:
 
