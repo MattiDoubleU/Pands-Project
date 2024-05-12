@@ -76,3 +76,5 @@ Userwarning https://stackoverflow.com/questions/76901874/userwarning-the-figure-
 
 How to disable Python warnings? https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings
 
+Plotting a heatmap based on a scatterplot in Seaborn https://stackoverflow.com/questions/70416424/plotting-a-heatmap-based-on-a-scatterplot-in-seaborn 
+
