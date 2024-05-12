@@ -151,7 +151,7 @@ plt.savefig('sepal_length_histogram.png')
 plt.show()
 
 
-# Pairplot
+# Pairplots of all variables
 sns.pairplot(df, hue='species', palette='viridis')
 
 # Save to png
@@ -160,10 +160,63 @@ plt.savefig('pair_plot_all_variables')
 # Show plot
 plt.show()
 
+# Heatmaps
+# Plotting heatmaps sepal_length vs sepal_width - this won't save to .cng file as I decided to create one single figure as per below
+fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
 
+sns.set_style('darkgrid')
+sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
+sns.histplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax2)
+sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3)
 
+ax1.set_title('scatterplot')
+ax2.set_title('histplot')
+ax3.set_title('kdeplot')
+plt.tight_layout()
 
+# Show plot
+plt.show()
 
+# Plotting heatmaps petal_length vs length_width 
+fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
+
+sns.set_style('darkgrid')
+sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax1)
+sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax2)
+sns.kdeplot(x=df['petal_length'], y=df['petal_width'], fill=True, ax=ax3)
+
+ax1.set_title('scatterplot')
+ax2.set_title('histplot')
+ax3.set_title('kdeplot')
+plt.tight_layout()
+
+# Show plot
+plt.show()
+
+# Plotting heatmaps petal_length vs petal_width & sepal_length vs sepal_width
+fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(ncols=3, nrows=2, figsize=(10, 6), sharex=True, sharey=True)
+
+sns.set_style('darkgrid')
+sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
+sns.histplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax2)
+sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3)
+
+sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax4)
+sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax5)
+sns.kdeplot(x=df['petal_length'], y=df['petal_width'], fill=True, ax=ax6)
+
+ax1.set_title('sepal_length vs sepal_width - Scatterplot')
+ax2.set_title('sepal_length vs sepal_width - Histplot')
+ax3.set_title('sepal_length vs sepal_width - KDE Plot')
+ax4.set_title('petal_length vs petal_width - Scatterplot')
+ax5.set_title('petal_length vs petal_width - Histplot')
+ax6.set_title('kpetal_length vs petal_width - KDE Plot')
+plt.tight_layout()     # plt.tight_layout() to ensure the plots don't overlap.
+
+plt.savefig('heatmaps.png')
+
+# Show plot
+plt.show()
 
 # Below here is just scrippling for now.
 
