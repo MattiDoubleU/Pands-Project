@@ -10,13 +10,15 @@ import matplotlib.pyplot as plt
 # Numerical arrays.
 import numpy as np
 
+# Latest version of matplotlib now installed (v.3.7.3) but I decided to keep the error warning module but inside triple quotes to see if the program now doesn't throw the error without it, but
+# also to demonstrate my work and I am learning by doing.
 # I kept getting the following warning: UserWarning: The figure layout has changed to tight self._figure.tight_layout(*args, **kwargs). 
 # It's a warning so the pair plot (line 154) would still generate though it's cleaner without it. I found out that apparently there's a bug and I would need to install
 # matplotlib 3.7.3 (mine is 3.7.2): https://stackoverflow.com/questions/76901874/userwarning-the-figure-layout-has-changed-to-tight-self-figure-tight-layouta but I also researched a quick fix:
-
+'''
 import warnings                                # https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings.
 warnings.filterwarnings('ignore')
-
+'''
 # Load Data: We we will use df to define data frame.
 df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
 
@@ -150,9 +152,10 @@ plt.savefig('sepal_length_histogram.png')
 # Show plot
 plt.show()
 
+sns.color_palette()
 
 # Pairplots of all variables
-sns.pairplot(df, hue='species', palette='viridis')
+sns.pairplot(df, hue='species', palette='rocket')
 
 # Save to png
 plt.savefig('pair_plot_all_variables')
@@ -164,7 +167,7 @@ plt.show()
 # Plotting heatmaps sepal_length vs sepal_width - this won't save to .cng file as I decided to create one single figure as per below
 fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
 
-sns.set_style('darkgrid')
+sns.set_style('darkgrid')    
 sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
 sns.histplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax2)
 sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3)
@@ -180,7 +183,6 @@ plt.show()
 # Plotting heatmaps petal_length vs length_width 
 fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
 
-sns.set_style('darkgrid')
 sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax1)
 sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax2)
 sns.kdeplot(x=df['petal_length'], y=df['petal_width'], fill=True, ax=ax3)
@@ -199,7 +201,7 @@ fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(ncols=3, nrows=2, figsize
 sns.set_style('darkgrid')
 sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
 sns.histplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax2)
-sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3)
+sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3) # kde plot (Kernel Density Estimate) plot
 
 sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax4)
 sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax5)

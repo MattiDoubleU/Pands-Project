@@ -31,15 +31,41 @@ We will use the outputs to explore and demonstrate the following items:
 * Sepal length
 * Sepal width
 
-# 3. tba
-* tba
-* tba
-* tba
+# 3. Graphical representation of data in pairplots
+* pairwise relationships
+* hue parameter
+* color palette
+
+# 4. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot
+* Scatter plot
+* Histogram
+* Kernel Density Estimate (KDE) plot
+
+# 5. Graphical representation of petal length vs width of species combinded in scatter, -hist, & KDE plot
+* Scatter plot
+* Histogram
+* Kernel Density Estimate (KDE) plot
 
 
 
 Let's explore the items in 1:
-First of all I have chosen to display the data in its entirety as opposed to truncated. It requires a bit of scrolling down in the text file but it's still reasonable as there are a total of 150 lines only which translates to 150 samples taken. We now learn that 50 samples were taken from three different flower species each: Setosa, Versicolor & Virginica. Next we see the stastical description of the data set: Count, mean, standard deviation, min & max (minimum & maximum value observed for each feature), 25%, 50, & 75% percentile, hence first quartile, which is the value below which 25% of the observations fall, median half of the observation fall below and half above that value and last third quartile, which is the value below which 75% of the observations fall.
+First of all I have chosen to display the data in its entirety as opposed to truncated. It requires a bit of scrolling down in the text file but it's still reasonable as there are a total of 150 lines only which translates to 150 samples taken. We now learn that 50 samples were taken from three different flower species each: Setosa, Versicolor & Virginica. Next we see the stastical description of the data set devided into four columns for each of the variables, which are sepal -length & width and petal -length & width and eight lines: Count, mean, standard deviation, min & max (minimum & maximum value observed for each feature), 25%, 50%, & 75% percentile, hence first quartile, which is the value below which 25% of the observations fall, median half of the observation fall below and half above that value and last third quartile, which is the value below which 75% of the observations fall.
+
+Explore 3:
+Using Seaborn's pairplot function, I generate pairplots that display pairwise relationships between all variables in the Iris dataset (df). Additionally, the hue parameter is set to 'species', which colors the data points based on the value of the 'species' column, allowing for easy visualization of how the variables relate to different species of iris flowers. The palette parameter is set to 'rocket', which specifies the color palette used for differentiating between species.
+
+
+
+Let's explore the items in 4.
+* Each subplot displays different visualizations of the relationship between the measurements of sepal length and sepal width of iris flowers. Specifically:
+* 1. Scatter plot showing the distribution of sepal length and sepal width.
+* 2. Histogram representing the distribution of sepal length and sepal width.
+* 3. Kernel Density Estimate (KDE) plot illustrating the density of the distribution of sepal length and sepal width.
+
+Explore 5.  Different visualizations of the relationship between the measurements of petal length and petal width of iris flowers.
+* 1. Scatter plot showing the distribution of petal length and petal width.
+* 2. Histogram representing the distribution of petal length and petal width.
+* 3. Kernel Density Estimate (KDE) plot illustrating the density of the distribution of petal length and petal width.
  
 
 
@@ -77,4 +103,10 @@ Userwarning https://stackoverflow.com/questions/76901874/userwarning-the-figure-
 How to disable Python warnings? https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings
 
 Plotting a heatmap based on a scatterplot in Seaborn https://stackoverflow.com/questions/70416424/plotting-a-heatmap-based-on-a-scatterplot-in-seaborn 
+
+Choosing color palettes https://seaborn.pydata.org/tutorial/color_palettes.html
+
+seaborn.axes_style https://seaborn.pydata.org/generated/seaborn.axes_style.html
+
+Matplotlib Install an official release https://matplotlib.org/stable/users/installing/index.html
 
