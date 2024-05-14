@@ -67,14 +67,14 @@ slen = df['sepal_length'].to_numpy()
 # Sepal width.
 swidth = df['sepal_width'].to_numpy()
 
-# Create histogram for a) petal width for each of the three species
+# Create histogram for a) petal width for each of the three species.
 plt.hist([df[df['species'] == 'setosa']['petal_width'],
           df[df['species'] == 'versicolor']['petal_width'],
           df[df['species'] == 'virginica']['petal_width']],
          bins='auto', stacked=False, color=['green', 'blue', 'orange'],
          alpha=0.6, label=['setosa', 'versicolor', 'virginica']) # The alpha parameter in Matplotlib adjusts the transparency of the plotted elements.
 
-# Set labels and title
+# Set labels and title.
 plt.xlabel('Petal width (cm)')
 plt.ylabel('Count')
 plt.title('Petal width for Setosa, Versicolor & Virginica species')
@@ -83,81 +83,81 @@ plt.title('Petal width for Setosa, Versicolor & Virginica species')
 plt.legend()
 
 # Save to png
-plt.savefig('petal_width_histogram.png')
+plt.savefig('petal_width_histogram')
 
 # Show plot.
 plt.show()
 
-# Repeating above code for b) petal length
+# Repeating above code for b) petal length.
 plt.hist([df[df['species'] == 'setosa']['petal_length'],
           df[df['species'] == 'versicolor']['petal_length'],
           df[df['species'] == 'virginica']['petal_length']],
          bins='auto', stacked=False, color=['green', 'blue', 'orange'],
          alpha=0.6, label=['setosa', 'versicolor', 'virginica'])
 
-# Set labels and title
+# Set labels and title.
 plt.xlabel('Petal length (cm)')
 plt.ylabel('Count')
 plt.title('Petal length for Setosa, Versicolor & Virginica species')
 
-# Add legend
+# Add legend.
 plt.legend()
 
-# Save to png
-plt.savefig('petal_length_histogram.png')
+# Save to png.
+plt.savefig('petal_length_histogram')
 
-# Show plot
+# Show plot.
 plt.show()
 
-# c) Sepal width
+# c) Sepal width.
 plt.hist([df[df['species'] == 'setosa']['sepal_width'],
           df[df['species'] == 'versicolor']['sepal_width'],
           df[df['species'] == 'virginica']['sepal_width']],
          bins='auto', stacked=False, color=['green', 'blue', 'orange'],
          alpha=0.6, label=['setosa', 'versicolor', 'virginica'])
 
-# Set labels and title
+# Set labels and title.
 plt.xlabel('Sepal width (cm)')
 plt.ylabel('Count')
 plt.title('Sepal width for Setosa, Versicolor & Virginica species')
 
-# Add legend
+# Add legend.
 plt.legend()
 
-# Save to png
-plt.savefig('sepal_width_histogram.png')
+# Save to png.
+plt.savefig('sepal_width_histogram')
 
-# Show plot
+# Show plot.
 plt.show()
 
 
-# d) Sepal length
+# d) Sepal length.
 plt.hist([df[df['species'] == 'setosa']['sepal_length'],
           df[df['species'] == 'versicolor']['sepal_length'],
           df[df['species'] == 'virginica']['sepal_length']],
          bins='auto', stacked=False, color=['green', 'blue', 'orange'],
          alpha=0.6, label=['setosa', 'versicolor', 'virginica'])
 
-# Set labels and title
+# Set labels and title.
 plt.xlabel('Sepal length (cm)')
 plt.ylabel('Count')
 plt.title('Sepal length for Setosa, Versicolor & Virginica species')
 
-# Add legend
+# Add legend.
 plt.legend()
 
-# Save to png
-plt.savefig('sepal_length_histogram.png')
+# Save to png.
+plt.savefig('sepal_length_histogram')
 
 # Show plot
 plt.show()
 
 sns.color_palette()
 
-# Pairplots of all variables
+# Pairplots of all variables.
 sns.pairplot(df, hue='species', palette='rocket')
 
-# Save to png
+# Save to png.
 plt.savefig('pair_plot_all_variables')
 
 # Show plot
@@ -180,7 +180,7 @@ plt.tight_layout()
 # Show plot
 plt.show()
 
-# Plotting heatmaps petal_length vs length_width 
+# Plotting heatmaps petal_length vs petal_width.
 fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
 
 sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax1)
@@ -195,13 +195,13 @@ plt.tight_layout()
 # Show plot
 plt.show()
 
-# Plotting heatmaps petal_length vs petal_width & sepal_length vs sepal_width
+# Plotting heatmaps petal_length vs petal_width & sepal_length vs sepal_width.
 fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(ncols=3, nrows=2, figsize=(10, 6), sharex=True, sharey=True)
 
 sns.set_style('darkgrid')
 sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
 sns.histplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax2)
-sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3) # kde plot (Kernel Density Estimate) plot
+sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3) # kde plot (Kernel Density Estimate) plot.
 
 sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax4)
 sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax5)
@@ -215,14 +215,70 @@ ax5.set_title('petal_length vs petal_width - Histplot')
 ax6.set_title('kpetal_length vs petal_width - KDE Plot')
 plt.tight_layout()     # plt.tight_layout() to ensure the plots don't overlap.
 
-plt.savefig('heatmaps.png')
+# Save to png.
+plt.savefig('heatmaps')
 
-# Show plot
+# Show plot.
+plt.show()
+
+# Two variable plot: sepal_length vs petal_width with best fit line.
+# Define colors for each species by creating dictionary.
+colors = {'setosa': 'green', 'versicolor': 'orange', 'virginica': 'blue'}
+
+# Create a new figure and set of axes.
+fig, ax = plt.subplots(1, 1)
+
+# Plot the data points with color coding based on species.
+for i in range(len(slen)):
+    species_color = colors[df['species'][i]] if df['species'][i] in colors else 'k'  # Access species column / # It's a common convention in programming to use 'k' to represent black and 'i'(index) as loop variable.
+    ax.plot(slen[i], pwidth[i], 'o', c=species_color)
+
+# Compute the best fit line: y = mx + c (https://www.cuemath.com/geometry/y-mx-c/)
+m, c = np.polyfit(slen, pwidth, 1) 
+bf_x = np.linspace(min(slen), max(slen), 100)  # X values for best fit line & 100 for 100 evenly spaced numbers between min & max.
+bf_y = m * bf_x + c                            # Y values for best fit line.
+
+# Plot the best fit line.
+ax.plot(bf_x, bf_y, 'r-', label='Best Fit Line')  # r is for red, - dash for line.
+
+
+# Axis labels.
+ax.set_xlabel('sepal length (cm) ')
+ax.set_ylabel('petal width  (cm) ')
+
+# Add legend.
+legend_elements = [plt.Line2D([0], [0], marker='o', color='w', label='setosa', markerfacecolor='green', markersize=5),
+                   plt.Line2D([0], [0], marker='o', color='w', label='versicolor', markerfacecolor='orange', markersize=5),
+                   plt.Line2D([0], [0], marker='o', color='w', label='virginica', markerfacecolor='blue', markersize=5)]
+ax.legend(handles=legend_elements, loc='upper left')
+
+# Title.
+ax.set_title('sepal length vs petal width')
+
+# Save to .png.
+plt.savefig('sepal_length_vs_petal_width')
+
+# Show plot.
 plt.show()
 
 # Below here is just scrippling for now.
 
-'''
+''''
+
+# Pearson correlation coefficient (https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
+
+# Combine pwidth and slen into a 2D array.
+data = np.array([pwidth, slen])
+
+# Measure the correlation
+correlation_coefficient_matrix = np.corrcoef(data)
+
+# Extract the correlation coefficient between body mass and flipper length from the correlation matrix.
+correlation_coefficient = correlation_coefficient_matrix[0, 1]
+
+print("Correlation coefficient between petal width and sepal length is:", correlation_coefficient)
+
+
 from plotly.express import scatter_3d
 # Plotting in 3D by plotly.express that would show the plot with capability of zooming,
 # changing the orientation, and rotating
