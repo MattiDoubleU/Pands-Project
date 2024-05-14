@@ -12,39 +12,46 @@ This [project](https://atu-main-mdl-euwest1.s3.eu-west-1.amazonaws.com/66/82/668
 
 The Iris flower data set or Fisher's Iris data set is a multivariate data set used and made famous by the British statistician and biologist Ronald Fisher in his 1936 paper 'The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis' (https://en.wikipedia.org/wiki/Iris_flower_data_set#cite_note-anderson35-3).
 
+Please note that I used some code from the [Principals of Data Analytics module project](https://github.com/MattiDoubleU/Principles_of_Data_Analytics_mywork/blob/main/penguins.ipynb) which I completed two weeks earlier. 
+
 Upon execution of the code, it will generate the following outputs:
 
-* 1. The code will compile the items into a text file named "summary.txt."
-* 2. The graphical representations corresponding to items 2 and 3 will be saved as .png image files.
+* - The code will compile the items into a text file named "summary.txt."
+* - The graphical representations corresponding to items 2 and 3 will be saved as .png image files.
 
 We will use the outputs to explore and demonstrate the following items:
 
-# 1. Dataset properties
+## 1. Dataset properties
 * Species & count
 * Variables
 * Statistical description of dataset
 * Data types
 
-# 2. Graphical representation of data in a histogram
+## 2. Graphical representation of data in a histogram
 * Petal length 
 * Petal width
 * Sepal length
 * Sepal width
 
-# 3. Graphical representation of data in pairplots
+## 3. Graphical representation of data in pairplots
 * pairwise relationships
 * hue parameter
 * color palette
 
-# 4. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot
+## 4. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot
 * Scatter plot
 * Histogram
 * Kernel Density Estimate (KDE) plot
 
-# 5. Graphical representation of petal length vs width of species combinded in scatter, -hist, & KDE plot
+## 5. Graphical representation of petal length vs width of species combinded in scatter, -hist, & KDE plot
 * Scatter plot
 * Histogram
 * Kernel Density Estimate (KDE) plot
+
+## 6. Two variable plot with best fit line
+* tba
+* tba
+* tba
 
 
 
@@ -52,7 +59,16 @@ Let's explore the items in 1:
 First of all I have chosen to display the data in its entirety as opposed to truncated. It requires a bit of scrolling down in the text file but it's still reasonable as there are a total of 150 lines only which translates to 150 samples taken. We now learn that 50 samples were taken from three different flower species each: Setosa, Versicolor & Virginica. Next we see the stastical description of the data set devided into four columns for each of the variables, which are sepal -length & width and petal -length & width and eight lines: Count, mean, standard deviation, min & max (minimum & maximum value observed for each feature), 25%, 50%, & 75% percentile, hence first quartile, which is the value below which 25% of the observations fall, median half of the observation fall below and half above that value and last third quartile, which is the value below which 75% of the observations fall.
 
 Explore 3:
-Using Seaborn's pairplot function, I generate pairplots that display pairwise relationships between all variables in the Iris dataset (df). Additionally, the hue parameter is set to 'species', which colors the data points based on the value of the 'species' column, allowing for easy visualization of how the variables relate to different species of iris flowers. The palette parameter is set to 'rocket', which specifies the color palette used for differentiating between species.
+I decided to use Seaborn's pairplot function: It generates pairplots that illustrate pairwise relationships between all the numeric features of all variables in the Iris dataset (df) with a 'Kernel Density (kde) Plot' for each individual feature on the diagonal. Additionally, the hue parameter is set to 'species', which colors the data points based on the value of the 'species' column, allowing for easy visualization of how the variables relate to different species of iris flowers. The palette parameter is set to 'rocket', which specifies the color palette used for differentiating between species.
+
+Let's examine the plots to identify some useful insights and patterns from the dataset:
+
+Kde plots for Petal Width and Petal Length show that Iris Setosa can be distinguished from Iris Versicolor and Iris Virginica using either of these features.
+Scatter plot between Petal Width and Petal Length reveals a linear relationship. Additionally, this relationship allows for linear separation of all the classes.
+When Petal Width/Length is plotted against Sepal Width/Length, Iris Setosa is clearly separated from Iris Versicolor and Iris Virginica.
+Sepal Width shows a linearly separable relationship between all the classes, whereas Sepal Length shows a mix of the classes, making them not linearly separable.
+
+This aligns with [Awais Naeem's](https://www.embedded-robotics.com/iris-dataset-classification/) January 27, 2022 published work who used the same pairplot function to demonstrate perform exploratory data analysis of the Iris dataset.
 
 
 
@@ -67,6 +83,9 @@ Explore 5.  Different visualizations of the relationship between the measurement
 * 2. Histogram representing the distribution of petal length and petal width.
 * 3. Kernel Density Estimate (KDE) plot illustrating the density of the distribution of petal length and petal width.
  
+ Explore 6.
+* tba, tba, tba, tba, tba, tba, tba
+
 
 
 
@@ -109,4 +128,13 @@ Choosing color palettes https://seaborn.pydata.org/tutorial/color_palettes.html
 seaborn.axes_style https://seaborn.pydata.org/generated/seaborn.axes_style.html
 
 Matplotlib Install an official release https://matplotlib.org/stable/users/installing/index.html
+
+Pearson correlation coefficient https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
+
+Best fit line https://www.cuemath.com/geometry/y-mx-c/
+
+numpy.polyfit https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit 
+
+https://github.com/MattiDoubleU/Principles_of_Data_Analytics_mywork/blob/main/penguins.ipynb
+
 
