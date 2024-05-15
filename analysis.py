@@ -30,7 +30,7 @@ entire_df = df.to_string()
 # Show.
 print(entire_df)
 
-# Group the DataFrame by 'species' and count the number of occurrences. This code was proposed by ChatGPT.
+# Group the DataFrame by 'species' and count the number of occurrences. Pandas documentation pandas.DataFrame.groupby: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html
 species_counts = df.groupby(['species']).size().reset_index(name='count')
 
 print("Number of samples for each species:")
@@ -71,8 +71,8 @@ swidth = df['sepal_width'].to_numpy()
 plt.hist([df[df['species'] == 'setosa']['petal_width'],
           df[df['species'] == 'versicolor']['petal_width'],
           df[df['species'] == 'virginica']['petal_width']],
-         bins='auto', stacked=False, color=['green', 'blue', 'orange'],
-         alpha=0.6, label=['setosa', 'versicolor', 'virginica']) # The alpha parameter in Matplotlib adjusts the transparency of the plotted elements.
+         bins='auto', stacked=False, color=['green', 'blue', 'orange'], # bins set to auto for the most appropriate representation.
+         alpha=0.6, label=['setosa', 'versicolor', 'virginica']) # The alpha parameter in Matplotlib adjusts the transparency of the plotted elements: https://www.geeksforgeeks.org/change-the-line-opacity-in-matplotlib/
 
 # Set labels and title.
 plt.xlabel('Petal width (cm)')
@@ -151,8 +151,6 @@ plt.savefig('sepal_length_histogram')
 
 # Show plot
 plt.show()
-
-sns.color_palette()
 
 # Pairplots of all variables.
 sns.pairplot(df, hue='species', palette='rocket')
@@ -261,12 +259,7 @@ plt.savefig('sepal_length_vs_petal_width')
 # Show plot.
 plt.show()
 
-# Below here is just scrippling for now.
-
-''''
-
-# Pearson correlation coefficient (https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
-
+# Pearson correlation coefficient (https://en.wikipedia.org/wiki/Pearson_correlation_coefficient).
 # Combine pwidth and slen into a 2D array.
 data = np.array([pwidth, slen])
 
@@ -276,9 +269,14 @@ correlation_coefficient_matrix = np.corrcoef(data)
 # Extract the correlation coefficient between body mass and flipper length from the correlation matrix.
 correlation_coefficient = correlation_coefficient_matrix[0, 1]
 
-print("Correlation coefficient between petal width and sepal length is:", correlation_coefficient)
+print("Correlation coefficient between petal width and sepal length is:",correlation_coefficient)
 
+with open("summary.txt", "a") as f:    # "a" append to summary.txt (if "w" is used it would overwrite the .txt generated in line 47 to 52)
+    print("Correlation coefficient between petal width and sepal length is:", correlation_coefficient, file=f)
 
+# Below here is just scrippling for now.
+
+'''
 from plotly.express import scatter_3d
 # Plotting in 3D by plotly.express that would show the plot with capability of zooming,
 # changing the orientation, and rotating
