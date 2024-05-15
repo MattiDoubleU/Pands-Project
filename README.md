@@ -6,69 +6,79 @@ Student at [ATU] (https://www.atu.ie/).
 
 <img src="https://www.embedded-robotics.com/wp-content/uploads/2022/01/Iris-Dataset-Classification-1024x367.png">
 
-## About this project
+## 1. Introduction / About this project
 
 This [project](https://atu-main-mdl-euwest1.s3.eu-west-1.amazonaws.com/66/82/6682ae48f67ebab9c769ddae345221f3d6405bfe?response-content-disposition=inline%3B%20filename%3D%22Project%202024.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWRN6GJFLWCMOG6H7%2F20240503%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240503T150953Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21547&X-Amz-Signature=acbfbd441db6e3cd56ef3e3b9fcc1c2b1921963e00667cebf1c714bd8cd504a6) for the Programming and Scripting module is my analysis on the widely available [Iris flower data set](https://archive.ics.uci.edu/dataset/53/iris).
 
-The Iris flower data set or Fisher's Iris data set is a multivariate data set used and made famous by the British statistician and biologist Ronald Fisher in his 1936 paper 'The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis' (https://en.wikipedia.org/wiki/Iris_flower_data_set#cite_note-anderson35-3).
+### 1.1 Iris flower dataset
+The Iris flower dataset or Fisher's Iris data set is a multivariate data set used and made famous by the British statistician and biologist Ronald Fisher in his 1936 paper 'The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis' (https://en.wikipedia.org/wiki/Iris_flower_data_set#cite_note-anderson35-3).
 
-Please note that I used some code from the [Principals of Data Analytics module project](https://github.com/MattiDoubleU/Principles_of_Data_Analytics_mywork/blob/main/penguins.ipynb) which I completed two weeks earlier. 
+### 1.2 Disclaimer:
+Please note that I used some code from the [Principals of Data Analytics module project](https://github.com/MattiDoubleU/Principles_of_Data_Analytics_mywork/blob/main/penguins.ipynb) I completed two weeks earlier. 
 
+### 1.3 Code action
 Upon execution of the code, it will generate the following outputs:
+    * The code will compile the items into a text file named "summary.txt."
+    * Graphical representations  will be saved as .png image files.
 
-* - The code will compile the items into a text file named "summary.txt."
-* - The graphical representations corresponding to items 2 and 3 will be saved as .png image files.
+## 2. Imported libraries and modules
+* pandas 
+* Seaborn
+* Matplotlib
+* NumPy
 
-We will use the outputs to explore and demonstrate the following items:
-
-## 1. Dataset properties
+## 3. Dataset properties
 * Species & count
 * Variables
 * Statistical description of dataset
 * Data types
 
-## 2. Graphical representation of data in a histogram
+## 4. Graphical representation of data in a histogram
 * Petal length 
 * Petal width
 * Sepal length
 * Sepal width
 
-## 3. Graphical representation of data in pairplots
-* pairwise relationships
-* hue parameter
-* color palette
+## 5. Graphical representation of data in pairplots
+* Pairwise relationships
+* Hue parameter
+* Color palette
+* Insights and patterns
 
-## 4. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot
+## 6. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot
 * Scatter plot
 * Histogram
 * Kernel Density Estimate (KDE) plot
 
-## 5. Graphical representation of petal length vs width of species combinded in scatter, -hist, & KDE plot
+## 7. Graphical representation of petal length vs width of species combinded in scatter, -hist, & KDE plot
 * Scatter plot
 * Histogram
 * Kernel Density Estimate (KDE) plot
 
-## 6. Two variable plot with best fit line
+## 8. Two variable plot with best fit line
 * tba
 * tba
 * tba
 
 
 
-Let's explore the items in 1:
+3. Dataset properties
 First of all I have chosen to display the data in its entirety as opposed to truncated. It requires a bit of scrolling down in the text file but it's still reasonable as there are a total of 150 lines only which translates to 150 samples taken. We now learn that 50 samples were taken from three different flower species each: Setosa, Versicolor & Virginica. Next we see the stastical description of the data set devided into four columns for each of the variables, which are sepal -length & width and petal -length & width and eight lines: Count, mean, standard deviation, min & max (minimum & maximum value observed for each feature), 25%, 50%, & 75% percentile, hence first quartile, which is the value below which 25% of the observations fall, median half of the observation fall below and half above that value and last third quartile, which is the value below which 75% of the observations fall.
 
-Explore 3:
+4. Graphical representation of data in a histogram
+As per project instruction a histogram of each variable is required. For this task I used Matplotlib *plt.hist()* function to generate histograms of the four variables in the dataset: Petal width & length as well as sepal width & length. I chose to use a different color to represent each species in the bar which allows for easier comparison.
+
+5. Graphical representation of data in pairplots
 I decided to use Seaborn's pairplot function: It generates pairplots that illustrate pairwise relationships between all the numeric features of all variables in the Iris dataset (df) with a 'Kernel Density (kde) Plot' for each individual feature on the diagonal. Additionally, the hue parameter is set to 'species', which colors the data points based on the value of the 'species' column, allowing for easy visualization of how the variables relate to different species of iris flowers. The palette parameter is set to 'rocket', which specifies the color palette used for differentiating between species.
 
 Let's examine the plots to identify some useful insights and patterns from the dataset:
 
-Kde plots for Petal Width and Petal Length show that Iris Setosa can be distinguished from Iris Versicolor and Iris Virginica using either of these features.
-Scatter plot between Petal Width and Petal Length reveals a linear relationship. Additionally, this relationship allows for linear separation of all the classes.
-When Petal Width/Length is plotted against Sepal Width/Length, Iris Setosa is clearly separated from Iris Versicolor and Iris Virginica.
-Sepal Width shows a linearly separable relationship between all the classes, whereas Sepal Length shows a mix of the classes, making them not linearly separable.
+Kde plots for petal width and petal length show that Iris Setosa can be distinguished from Iris Versicolor and Iris Virginica using either of these features.
+Scatter plot between petal width and petal length reveals a linear relationship. Additionally, this relationship allows for linear separation of all the classes.
+When petal width/length is plotted against sepal width/length, Iris Setosa is clearly separated from Iris Versicolor and Iris Virginica.
+sepal width shows a linearly separable relationship between all the classes, whereas sepal length shows a mix of the classes, making them not linearly separable.
 
-This aligns with [Awais Naeem's](https://www.embedded-robotics.com/iris-dataset-classification/) January 27, 2022 published work who used the same pairplot function to demonstrate perform exploratory data analysis of the Iris dataset.
+This has also been demonstrated in [Awais Naeem's](https://www.embedded-robotics.com/iris-dataset-classification/) January 27, 2022 published work who used the same Seaborn pairplot function *sns.pairplot()* to perform exploratory data analysis of the Iris dataset.
 
 
 
@@ -109,6 +119,8 @@ seaborn.pairplot https://seaborn.pydata.org/generated/seaborn.pairplot.html.
 
 Create specific plots using Pandas and then store them as PNG files: https://stackoverflow.com/questions/64542466/how-to-create-specific-plots-using-pandas-and-then-store-them-as-png-files.
 
+January 25, 2020 Vijaykrishna Ram, Python – Print to File https://www.askpython.com/python/built-in-methods/python-print-to-file
+
 matplotlib.pyplot.hist https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html.
 
 Histograms https://matplotlib.org/stable/gallery/statistics/hist.html.
@@ -137,4 +149,7 @@ numpy.polyfit https://numpy.org/doc/stable/reference/generated/numpy.polyfit.htm
 
 https://github.com/MattiDoubleU/Principles_of_Data_Analytics_mywork/blob/main/penguins.ipynb
 
+pandas.DataFrame.groupby https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html
+
+Change the line opacity in Matplotlib https://www.geeksforgeeks.org/change-the-line-opacity-in-matplotlib/
 
