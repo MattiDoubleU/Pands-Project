@@ -67,90 +67,69 @@ slen = df['sepal_length'].to_numpy()
 # Sepal width.
 swidth = df['sepal_width'].to_numpy()
 
-# Create histogram for a) petal width for each of the three species.
-plt.hist([df[df['species'] == 'setosa']['petal_width'],
-          df[df['species'] == 'versicolor']['petal_width'],
-          df[df['species'] == 'virginica']['petal_width']],
-         bins='auto', stacked=False, color=['green', 'blue', 'orange'], # bins set to auto for the most appropriate representation.
-         alpha=0.6, label=['setosa', 'versicolor', 'virginica']) # The alpha parameter in Matplotlib adjusts the transparency of the plotted elements: https://www.geeksforgeeks.org/change-the-line-opacity-in-matplotlib/
+# I previously had created four individual histograms for each of the four variables but decided to create one single figure with four histograms. My research brought me to
+# matplotlib documentation: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html. The fig & axs parameters helped to achieve this without much change to
+# my original code but I had to add the axs[] before operation to define the location of the histogram on the plot e.g. [0, 0] top left etc. (in clock wise order)
+# Create a figure with four subplots on two rows.
+fig, axs = plt.subplots(2, 2, figsize=(10, 6.5))  # figsize=(): selected values (10 y axes & 6.5 x axes) so the figures fits a 14" laptop screen nicely.
+
+# a) Create histogram for petal width.
+axs[0, 0].hist([df[df['species'] == 'setosa']['petal_width'],    # axs[0, 0] top left.
+                df[df['species'] == 'versicolor']['petal_width'],
+                df[df['species'] == 'virginica']['petal_width']],
+               bins='auto', stacked=False, color=['green', 'blue', 'orange'], # bins set to auto for the most appropriate representation.
+               alpha=1, label=['setosa', 'versicolor', 'virginica'])          # The alpha parameter in Matplotlib adjusts the transparency of the plotted elements: https://www.geeksforgeeks.org/change-the-line-opacity-in-matplotlib/
 
 # Set labels and title.
-plt.xlabel('Petal width (cm)')
-plt.ylabel('Count')
-plt.title('Petal width for Setosa, Versicolor & Virginica species')
+axs[0, 0].set_xlabel('Petal width (cm)')
+axs[0, 0].set_ylabel('Count')
+axs[0, 0].set_title('Petal width for Setosa, Versicolor & Virginica species')
 
 # Add legend.
-plt.legend()
+axs[0, 0].legend()
 
-# Save to png
-plt.savefig('petal_width_histogram')
+# b) Create histogram for petal length. 
+axs[0, 1].hist([df[df['species'] == 'setosa']['petal_length'],  # axs[0, 1] top right.
+                df[df['species'] == 'versicolor']['petal_length'],
+                df[df['species'] == 'virginica']['petal_length']],
+               bins='auto', stacked=False, color=['green', 'blue', 'orange'],
+               alpha=0.8, label=['setosa', 'versicolor', 'virginica'])
+axs[0, 1].set_xlabel('Petal length (cm)')
+axs[0, 1].set_ylabel('Count')
+axs[0, 1].set_title('Petal length for Setosa, Versicolor & Virginica species')
+axs[0, 1].legend()
 
-# Show plot.
-plt.show()
+# c) Create histogram for sepal width.
+axs[1, 0].hist([df[df['species'] == 'setosa']['sepal_width'],    # axs[1, 0] bottom left.
+                df[df['species'] == 'versicolor']['sepal_width'],
+                df[df['species'] == 'virginica']['sepal_width']],
+               bins='auto', stacked=False, color=['green', 'blue', 'orange'],
+               alpha=0.6, label=['setosa', 'versicolor', 'virginica'])
+axs[1, 0].set_xlabel('Sepal width (cm)')
+axs[1, 0].set_ylabel('Count')
+axs[1, 0].set_title('Sepal width for Setosa, Versicolor & Virginica species')
+axs[1, 0].legend()
 
-# Repeating above code for b) petal length.
-plt.hist([df[df['species'] == 'setosa']['petal_length'],
-          df[df['species'] == 'versicolor']['petal_length'],
-          df[df['species'] == 'virginica']['petal_length']],
-         bins='auto', stacked=False, color=['green', 'blue', 'orange'],
-         alpha=0.6, label=['setosa', 'versicolor', 'virginica'])
+# d) Create histogram for sepal length.
+axs[1, 1].hist([df[df['species'] == 'setosa']['sepal_length'],   # axs[1, 1] bottom right.
+                df[df['species'] == 'versicolor']['sepal_length'],
+                df[df['species'] == 'virginica']['sepal_length']],
+               bins='auto', stacked=False, color=['green', 'blue', 'orange'],
+               alpha=0.4, label=['setosa', 'versicolor', 'virginica'])
+axs[1, 1].set_xlabel('Sepal length (cm)')
+axs[1, 1].set_ylabel('Count')
+axs[1, 1].set_title('Sepal length for Setosa, Versicolor & Virginica species')
+axs[1, 1].legend()
 
-# Set labels and title.
-plt.xlabel('Petal length (cm)')
-plt.ylabel('Count')
-plt.title('Petal length for Setosa, Versicolor & Virginica species')
+# plt.tight_layout() to ensure the plots don't overlap.
+plt.tight_layout()
 
-# Add legend.
-plt.legend()
-
-# Save to png.
-plt.savefig('petal_length_histogram')
-
-# Show plot.
-plt.show()
-
-# c) Sepal width.
-plt.hist([df[df['species'] == 'setosa']['sepal_width'],
-          df[df['species'] == 'versicolor']['sepal_width'],
-          df[df['species'] == 'virginica']['sepal_width']],
-         bins='auto', stacked=False, color=['green', 'blue', 'orange'],
-         alpha=0.6, label=['setosa', 'versicolor', 'virginica'])
-
-# Set labels and title.
-plt.xlabel('Sepal width (cm)')
-plt.ylabel('Count')
-plt.title('Sepal width for Setosa, Versicolor & Virginica species')
-
-# Add legend.
-plt.legend()
-
-# Save to png.
-plt.savefig('sepal_width_histogram')
-
-# Show plot.
-plt.show()
-
-
-# d) Sepal length.
-plt.hist([df[df['species'] == 'setosa']['sepal_length'],
-          df[df['species'] == 'versicolor']['sepal_length'],
-          df[df['species'] == 'virginica']['sepal_length']],
-         bins='auto', stacked=False, color=['green', 'blue', 'orange'],
-         alpha=0.6, label=['setosa', 'versicolor', 'virginica'])
-
-# Set labels and title.
-plt.xlabel('Sepal length (cm)')
-plt.ylabel('Count')
-plt.title('Sepal length for Setosa, Versicolor & Virginica species')
-
-# Add legend.
-plt.legend()
-
-# Save to png.
-plt.savefig('sepal_length_histogram')
+# Save the figure as a single .png file
+plt.savefig('histograms_all_variables.png')
 
 # Show plot
 plt.show()
+
 
 # Pairplots of all variables.
 sns.pairplot(df, hue='species', palette='rocket')
@@ -158,11 +137,12 @@ sns.pairplot(df, hue='species', palette='rocket')
 # Save to png.
 plt.savefig('pair_plot_all_variables')
 
-# Show plot
+# Show plot.
 plt.show()
 
-# Heatmaps
-# Plotting heatmaps sepal_length vs sepal_width - this won't save to .cng file as I decided to create one single figure as per below
+
+# Heatmaps.
+# Plotting heatmaps sepal_length vs sepal_width - this won't save to .cng file as I decided to create one single figure as per below.
 fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
 
 sns.set_style('darkgrid')    
@@ -190,11 +170,11 @@ ax2.set_title('histplot')
 ax3.set_title('kdeplot')
 plt.tight_layout()
 
-# Show plot
+# Show plot.
 plt.show()
 
 # Plotting heatmaps petal_length vs petal_width & sepal_length vs sepal_width.
-fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(ncols=3, nrows=2, figsize=(10, 6), sharex=True, sharey=True)
+fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(ncols=3, nrows=2, figsize=(10, 6.5), sharex=True, sharey=True)
 
 sns.set_style('darkgrid')
 sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
@@ -219,8 +199,10 @@ plt.savefig('heatmaps')
 # Show plot.
 plt.show()
 
+# Below lines and ideas are loosely based on Ian's lectures.
+
 # Two variable plot: sepal_length vs petal_width with best fit line.
-# Define colors for each species by creating dictionary.
+# Define colors for each species by creating dictionary. 
 colors = {'setosa': 'green', 'versicolor': 'orange', 'virginica': 'blue'}
 
 # Create a new figure and set of axes.
@@ -231,7 +213,7 @@ for i in range(len(slen)):
     species_color = colors[df['species'][i]] if df['species'][i] in colors else 'k'  # Access species column / # It's a common convention in programming to use 'k' to represent black and 'i'(index) as loop variable.
     ax.plot(slen[i], pwidth[i], 'o', c=species_color)
 
-# Compute the best fit line: y = mx + c (https://www.cuemath.com/geometry/y-mx-c/)
+# Compute the best fit line: y = mx + c (https://www.cuemath.com/geometry/y-mx-c/).
 m, c = np.polyfit(slen, pwidth, 1) 
 bf_x = np.linspace(min(slen), max(slen), 100)  # X values for best fit line & 100 for 100 evenly spaced numbers between min & max.
 bf_y = m * bf_x + c                            # Y values for best fit line.
@@ -263,7 +245,7 @@ plt.show()
 # Combine pwidth and slen into a 2D array.
 data = np.array([pwidth, slen])
 
-# Measure the correlation
+# Measure the correlation.
 correlation_coefficient_matrix = np.corrcoef(data)
 
 # Extract the correlation coefficient between body mass and flipper length from the correlation matrix.
@@ -271,7 +253,7 @@ correlation_coefficient = correlation_coefficient_matrix[0, 1]
 
 print("Correlation coefficient between petal width and sepal length is:",correlation_coefficient)
 
-with open("summary.txt", "a") as f:    # "a" append to summary.txt (if "w" is used it would overwrite the .txt generated in line 47 to 52)
+with open("summary.txt", "a") as f:    # "a" append to summary.txt (if "w" is used it would overwrite the .txt generated in line 47 to 52).
     print("Correlation coefficient between petal width and sepal length is:", correlation_coefficient, file=f)
 
 # Below here is just scrippling for now.
