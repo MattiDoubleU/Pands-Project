@@ -17,10 +17,12 @@ Student at [ATU] (https://www.atu.ie/).
 - [4. Graphical representation of data in a histogram](#4-graphical-representation-of-data-in-a-histogram)
 - [5. Graphical representation of data in pairplots](#5-graphical-representation-of-data-in-pairplots)
 - [6. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot](#6-graphical-representation-of-sepal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
-- [7. Graphical representation of petal length vs width of species combinded in scatter, -hist, & KDE plot](#7-graphical-representation-of-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
-- [8. Two variable plot with best fit line](#8-two-variable-plot-with-best-fit-line)
-- [9. Person Correlation Coefficient.](#9-person-correlation-coefficient)
-- [10. References and further readings:](#10-references-and-further-readings)
+    * [6.1 Scatter plot](#61-scatter-plot)
+    * [6.2 Histogram](#62-histogram)
+    * [6.3 Kernel Density Estimate (KDE) plot](#63-kernel-density-estimate-kde-plot)
+- [7. Two variable plot with best fit line](#8-two-variable-plot-with-best-fit-line)
+- [8. Person Correlation Coefficient.](#9-person-correlation-coefficient)
+- [9. References and further readings:](#10-references-and-further-readings)
 
 <!-- TOC end -->
 
@@ -53,7 +55,14 @@ built on top of the Python programming language.
 
 <!-- TOC --><a name="3-dataset-properties"></a>
 ## 3. Dataset properties
-First of all I have chosen to display the data in its entirety as opposed to truncated *df.to_string()*. It requires a bit of scrolling down in the text file but it's still reasonable as there are a total of 150 lines only which translates to 150 samples taken, that is 50 taken from three different flower species each *df.groupby()*: Setosa, Versicolor & Virginica. Next we see the stastical description *df.describe()* of the data set devided into four columns for each of the variables, which are sepal -length & width and petal -length & width and eight lines: Count, mean, standard deviation, min & max (minimum & maximum value observed for each feature), 25%, 50%, & 75% percentile, hence first quartile, which is the value below which 25% of the observations fall, median half of the observation fall below and half above that value and last third quartile, which is the value below which 75% of the observations fall. Finally the data types are presented *df.types*: variables are float64 whereas species is object.
+First of all I have chosen to display the data in its entirety as opposed to truncated *df.to_string()*. It requires a bit of scrolling down in the text file but it's still reasonable as there are a total of 150 lines only which translates to 150 samples taken, that is 50 taken from three different flower species each *df.groupby()*: Setosa, Versicolor & Virginica. Next we see the stastical description *df.describe()* of the data set devided into four columns for each of the variables: 
+* sepal length 
+* sepal width 
+* petal length
+* petal width 
+and eight lines: Count, mean, standard deviation, min & max (minimum & maximum value observed for each feature), 25%, 50%, & 75% percentile, hence first quartile, which is the value below which 25% of the observations fall, median half of the observation fall below and half above that value and last third quartile, which is the value below which 75% of the observations fall. Finally the data types are presented *df.types*: 
+* variables are 'float64'.
+* species is 'object'.
 
 <!-- TOC --><a name="4-graphical-representation-of-data-in-a-histogram"></a>
 ## 4. Graphical representation of data in a histogram
@@ -72,6 +81,8 @@ I decided to use Seaborn's pairplot function *sns.pairplot()*: A single line of 
 Let's examine the plots to identify some useful insights and patterns from the dataset:
 
 Kde plots for petal width and petal length show that Iris Setosa can be distinguished from Iris Versicolor and Iris Virginica using either of these features.
+It is the Setosa species that yypically has smaller sepal lengths and widths, often forming a tight cluster in the lower left of the scatter plot.
+On the contrary Versicolor and Virginica species usually have larger sepal lengths and widths, with Virginica generally being the largest. They form separate clusters that might overlap.
 Scatter plot between petal width and petal length reveals a linear relationship. Additionally, this relationship allows for linear separation of all the classes.
 When petal width/length is plotted against sepal width/length, Iris Setosa is clearly separated from Iris Versicolor and Iris Virginica.
 sepal width shows a linearly separable relationship between all the classes, whereas sepal length shows a mix of the classes, making them not linearly separable.
@@ -79,80 +90,102 @@ sepal width shows a linearly separable relationship between all the classes, whe
 This has also been demonstrated in [Awais Naeem's](https://www.embedded-robotics.com/iris-dataset-classification/) January 27, 2022 published work who used the same Seaborn pairplot function *sns.pairplot()* to perform exploratory data analysis of the Iris dataset.
 
 <!-- TOC --><a name="6-graphical-representation-of-sepal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot"></a>
-## 6. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot
-* Scatter plot
-* Histogram
-* Kernel Density Estimate (KDE) plot
+## 6. Heatmaps: Graphical representation of sepal length vs width & petal length vs width of species combinded in scatter, -hist, & KDE plot
+tba, tba
 
-<!-- TOC --><a name="7-graphical-representation-of-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot"></a>
-## 7. Graphical representation of petal length vs width of species combinded in scatter, -hist, & KDE plot
-* Scatter plot
-* Histogram
-* Kernel Density Estimate (KDE) plot
+<!-- TOC --><a name="61-scatter-plot"></a>
+### 6.1 Scatter plot
+tba, tba
 
-<!-- TOC --><a name="8-two-variable-plot-with-best-fit-line"></a>
-## 8. Two variable plot with best fit line
-* tba
-* tba
-* tba
+<!-- TOC --><a name="62-histogram"></a>
+### 6.2 Histogram
+tba, tba
 
-<!-- TOC --><a name="9-person-correlation-coefficient"></a>
-## 9. Person Correlation Coefficient.
+<!-- TOC --><a name="63-kernel-density-estimate-(kde)-plot"></a>
+### 6.3 Kernel Density Estimate (KDE) plot
+
+<!-- TOC --><a name="7-two-variable-plot-with-best-fit-line"></a>
+## 7. Two variable plot with best fit line
 * tba
 * tba
 * tba
 
-<!-- TOC --><a name="10-references-and-further-readings"></a>
-## 10. References and further readings:
+<!-- TOC --><a name="8-person-correlation-coefficient"></a>
+## 8. Person Correlation Coefficient.
+* tba
+* tba
+* tba
+
+<!-- TOC --><a name="9-references-and-further-readings"></a>
+## 9. References and further readings:
 
 Iris flower data set: https://en.wikipedia.org/wiki/Iris_flower_data_set.
 
 January 27, 2022 Awais Naeem, Iris Dataset Classification using Support Vector Machine, Random Forest, and Gradient Boosting Classifier https://www.embedded-robotics.com/iris-dataset-classification/.
 
+### pandas:
+
+pandas.DataFrame.groupby https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html.
+
+### Seaborn:
+
 Overview of seaborn plotting functions: https://seaborn.pydata.org/tutorial/function_overview.html.
-
-Directing print output to a .txt file: https://stackoverflow.com/questions/36571560/directing-print-output-to-a-txt-file.
-
-November 27, 2022 by Shikha Mishra, print entire dataframe panda – Python Pandas: How to display full Dataframe i.e. print all rows & columns without truncation https://btechgeeks.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/.
-
-Plotting Histogram in Python using Matplotlib: https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/.
 
 seaborn.pairplot https://seaborn.pydata.org/generated/seaborn.pairplot.html.
 
-Create specific plots using Pandas and then store them as PNG files: https://stackoverflow.com/questions/64542466/how-to-create-specific-plots-using-pandas-and-then-store-them-as-png-files.
+Choosing color palettes https://seaborn.pydata.org/tutorial/color_palettes.html.
 
-January 25, 2020 Vijaykrishna Ram, Python – Print to File https://www.askpython.com/python/built-in-methods/python-print-to-file
+seaborn.axes_style https://seaborn.pydata.org/generated/seaborn.axes_style.html
+
+### Matplotlib:
 
 matplotlib.pyplot.hist https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html.
 
 Histograms https://matplotlib.org/stable/gallery/statistics/hist.html.
 
-Histograms in Matplotlib https://www.datacamp.com/tutorial/histograms-matplotlib.
+Matplotlib Install an official release https://matplotlib.org/stable/users/installing/index.html.
+
+matplotlib.pyplot.subplots https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html.
+
+### NumPy:
+
+numpy.polyfit https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit.
+
+numpy.linspace https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy-linspace.
+
+### stackoverflow.com:
+
+Directing print output to a .txt file: https://stackoverflow.com/questions/36571560/directing-print-output-to-a-txt-file.
+
+Create specific plots using Pandas and then store them as PNG files: https://stackoverflow.com/questions/64542466/how-to-create-specific-plots-using-pandas-and-then-store-them-as-png-files.
 
 scatter subplot for iris dataset https://stackoverflow.com/questions/66493893/scatter-subplot-for-iris-dataset.
 
-Userwarning https://stackoverflow.com/questions/76901874/userwarning-the-figure-layout-has-changed-to-tight-self-figure-tight-layouta
+How to disable Python warnings? https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings.
 
-How to disable Python warnings? https://stackoverflow.com/questions/14463277/how-to-disable-python-warnings
+Userwarning https://stackoverflow.com/questions/76901874/userwarning-the-figure-layout-has-changed-to-tight-self-figure-tight-layouta.
 
-Plotting a heatmap based on a scatterplot in Seaborn https://stackoverflow.com/questions/70416424/plotting-a-heatmap-based-on-a-scatterplot-in-seaborn 
+Plotting a heatmap based on a scatterplot in Seaborn https://stackoverflow.com/questions/70416424/plotting-a-heatmap-based-on-a-scatterplot-in-seaborn.
 
-Choosing color palettes https://seaborn.pydata.org/tutorial/color_palettes.html
+How to plot in multiple subplots? https://stackoverflow.com/questions/31726643/how-to-plot-in-multiple-subplots.
 
-seaborn.axes_style https://seaborn.pydata.org/generated/seaborn.axes_style.html
+### Miscellaneous:
 
-Matplotlib Install an official release https://matplotlib.org/stable/users/installing/index.html
+Plotting Histogram in Python using Matplotlib: https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/.
 
-Pearson correlation coefficient https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
+Histograms in Matplotlib https://www.datacamp.com/tutorial/histograms-matplotlib.
 
-Best fit line https://www.cuemath.com/geometry/y-mx-c/
+November 27, 2022 by Shikha Mishra, print entire dataframe panda – Python Pandas: How to display full Dataframe i.e. print all rows & columns without truncation https://btechgeeks.com/python-pandas-how-to-display-full-dataframe-i-e-print-all-rows-columns-without-truncation/.
 
-numpy.polyfit https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit 
+January 25, 2020 Vijaykrishna Ram, Python – Print to File https://www.askpython.com/python/built-in-methods/python-print-to-file.
 
-https://github.com/MattiDoubleU/Principles_of_Data_Analytics_mywork/blob/main/penguins.ipynb
+Histograms in Matplotlib https://www.datacamp.com/tutorial/histograms-matplotlib.
 
-pandas.DataFrame.groupby https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html
+Pearson correlation coefficient https://en.wikipedia.org/wiki/Pearson_correlation_coefficient.
 
-Change the line opacity in Matplotlib https://www.geeksforgeeks.org/change-the-line-opacity-in-matplotlib/
+Best fit line https://www.cuemath.com/geometry/y-mx-c/.
 
-matplotlib.pyplot.subplots https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html
+https://github.com/MattiDoubleU/Principles_of_Data_Analytics_mywork/blob/main/penguins.ipynb.
+
+Change the line opacity in Matplotlib https://www.geeksforgeeks.org/change-the-line-opacity-in-matplotlib/.
+
