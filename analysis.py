@@ -130,9 +130,9 @@ plt.savefig('histograms_all_variables.png')
 # Show plot
 plt.show()
 
-
-# Pairplots of all variables.
-sns.pairplot(df, hue='species', palette='rocket')
+# Pairplots of all variables. https://seaborn.pydata.org/generated/seaborn.pairplot.html
+sns.pairplot(df, hue='species', palette='rocket', markers=["o", "s", "D"], height=1.6, aspect=1) # height=1.6 & aspect=1 tweaking output size to fit a 14" laptop screen nicely.
+                                                                                                 # and added markers=[] to demonstrate that there is a variety of options.
 
 # Save to png.
 plt.savefig('pair_plot_all_variables')
@@ -140,38 +140,9 @@ plt.savefig('pair_plot_all_variables')
 # Show plot.
 plt.show()
 
-
 # Heatmaps.
-# Plotting heatmaps sepal_length vs sepal_width - this won't save to .cng file as I decided to create one single figure as per below.
-fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
-
-sns.set_style('darkgrid')    
-sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
-sns.histplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax2)
-sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3)
-
-ax1.set_title('scatterplot')
-ax2.set_title('histplot')
-ax3.set_title('kdeplot')
-plt.tight_layout()
-
-# Show plot
-plt.show()
-
-# Plotting heatmaps petal_length vs petal_width.
-fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 4), sharex=True, sharey=True)
-
-sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax1)
-sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax2)
-sns.kdeplot(x=df['petal_length'], y=df['petal_width'], fill=True, ax=ax3)
-
-ax1.set_title('scatterplot')
-ax2.set_title('histplot')
-ax3.set_title('kdeplot')
-plt.tight_layout()
-
-# Show plot.
-plt.show()
+# I also wanted to explore heatmaps and again decided to plot in multiple subplots, this time demonstrating different tyoes of heatmaps:
+# scatterplot, histplot & kde plot, thoug striclty speaking a scatterplot is not a heatmap.
 
 # Plotting heatmaps petal_length vs petal_width & sepal_length vs sepal_width.
 fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(ncols=3, nrows=2, figsize=(10, 6.5), sharex=True, sharey=True)
@@ -185,6 +156,7 @@ sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax4)
 sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax5)
 sns.kdeplot(x=df['petal_length'], y=df['petal_width'], fill=True, ax=ax6)
 
+# Add titles.
 ax1.set_title('sepal_length vs sepal_width - Scatterplot')
 ax2.set_title('sepal_length vs sepal_width - Histplot')
 ax3.set_title('sepal_length vs sepal_width - KDE Plot')
@@ -256,58 +228,3 @@ print("Correlation coefficient between petal width and sepal length is:",correla
 with open("summary.txt", "a") as f:    # "a" append to summary.txt (if "w" is used it would overwrite the .txt generated in line 47 to 52).
     print("Correlation coefficient between petal width and sepal length is:", correlation_coefficient, file=f)
 
-# Below here is just scrippling for now.
-
-'''
-from plotly.express import scatter_3d
-# Plotting in 3D by plotly.express that would show the plot with capability of zooming,
-# changing the orientation, and rotating
-scatter_3d(df, x='sepal_length', y='sepal_width', z='petal_length', size="petal_width",
-                   color="species", color_discrete_map={"Joly": "blue", "Bergeron": "violet", "Coderre": "pink"})\
-            .show()
-
-
-
-
-# Create simple Plot.
-plt.plot(plen, pwidth, 'o')   # Displays as 'Os'
-
-# Axis labels.
-plt.xlabel('Petal Length (cm) ')
-plt.ylabel('Petal Width (cm) ')
-
-# Title.
-plt.title('Iris Data Set')
-
-# X limits
-plt.xlim(0, 8)
-
-# Y limits
-plt.ylim(0, 4)
-
-# Show.
-plt.show()
-
-
-# Let's create a basic histogram on petal length.
-plt.hist(plen, bins=30, color='skyblue', edgecolor='black')
- 
-# Adding labels and title
-plt.xlabel('Values')
-plt.ylabel('Frequency')
-plt.title('Basic Histogram')
- 
-# Display the plot
-plt.show()
-
-# Creating a customized histogram with a density plot
-sns.histplot(plen, bins=30, kde=True, color='lightgreen', edgecolor='red')
- 
-# Adding labels and title
-plt.xlabel('Values')
-plt.ylabel('Density')
-plt.title('Customized Histogram with Density Plot')
- 
-# Display the plot
-plt.show()
-'''
