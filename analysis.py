@@ -142,7 +142,7 @@ plt.show()
 
 # Heatmaps.
 # I also wanted to explore heatmaps and again decided to plot in multiple subplots, this time demonstrating different tyoes of heatmaps:
-# scatterplot, histplot & kde plot, thoug striclty speaking a scatterplot is not a heatmap.
+# scatterplot, histplot & kde plot, though strictly speaking a scatterplot is not a heatmap.
 
 # Plotting heatmaps petal_length vs petal_width & sepal_length vs sepal_width.
 fig, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(ncols=3, nrows=2, figsize=(10, 6.5), sharex=True, sharey=True)
@@ -152,10 +152,10 @@ sns.scatterplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax1)
 sns.histplot(x=df['sepal_length'], y=df['sepal_width'], ax=ax2)
 sns.kdeplot(x=df['sepal_length'], y=df['sepal_width'], fill=True, ax=ax3) # kde plot (Kernel Density Estimate) plot.
 
-sns.scatterplot(x=df['petal_length'], y=df['petal_width'], ax=ax4)
-sns.histplot(x=df['petal_length'], y=df['petal_width'], ax=ax5)
-sns.kdeplot(x=df['petal_length'], y=df['petal_width'], fill=True, ax=ax6)
-
+sns.scatterplot(data=df, x='petal_length', y='petal_width', hue='species', ax=ax4) # Assigning a variable to hue will map its levels to the color of the points.
+sns.histplot(data=df, x='petal_length', y='petal_width', hue='species', multiple='stack', ax=ax5) # stacks the histograms for different categories on top of each other within the same plot.
+sns.kdeplot(data=df, x='petal_length', y='petal_width', hue='species', palette="Spectral", fill=True, common_norm=False, ax=ax6) # Adding 'palette' to demonstrate the use of different color schemes.
+                                                                                                                                 # By setting common_norm=False, each subset will be normalized independently.
 # Add titles.
 ax1.set_title('sepal_length vs sepal_width - Scatterplot')
 ax2.set_title('sepal_length vs sepal_width - Histplot')
@@ -167,6 +167,12 @@ plt.tight_layout()     # plt.tight_layout() to ensure the plots don't overlap.
 
 # Save to png.
 plt.savefig('heatmaps')
+
+# Show plot.
+plt.show()
+
+# Conditioning on other variables.
+sns.displot(df, x="petal_length", hue="species")
 
 # Show plot.
 plt.show()
