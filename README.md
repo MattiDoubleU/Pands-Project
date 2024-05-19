@@ -16,7 +16,7 @@ Student at [ATU] (https://www.atu.ie/).
 - [3. Dataset properties](#3-dataset-properties)
 - [4. Graphical representation of data in a histogram](#4-graphical-representation-of-data-in-a-histogram)
 - [5. Graphical representation of data in pairplots](#5-graphical-representation-of-data-in-pairplots)
-- [6. Heatmaps: Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot](#6-heatmaps:-graphical-representation-of-sepal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
+- [6. Heatmaps: Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot](#6-heatmaps:-graphical-representation-of-sepal-length-vs-width-&-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
     * [6.1 Scatter plot](#61-scatter-plot)
     * [6.2 Bivariate Histogram](#62-bivariate-histogram)
     * [6.3 Kernel Density Estimate (KDE) plot heatmap](#63-kernel-density-estimate-kde-plot-heatmap)
@@ -89,7 +89,7 @@ sepal width shows a linearly separable relationship between all the classes, whe
 
 This has also been demonstrated in [Awais Naeem's](https://www.embedded-robotics.com/iris-dataset-classification/) January 27, 2022 published work who used the same Seaborn pairplot function *sns.pairplot()* to perform exploratory data analysis of the Iris dataset.
 
-<!-- TOC --><a name="6-graphical-representation-of-sepal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot"></a>
+<!-- TOC --><a name="6-graphical-representation-of-sepal-length-vs-width-&-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot"></a>
 ## 6. Heatmaps: Graphical representation of sepal length vs width & petal length vs width of species combinded in scatter, -hist, & KDE plot
 Heatmaps are another useful tool to examine relationships between two different variables. First, instead of color-coding each species, I wanted to explore another Seaborn function *fig, ax = plt.subplots()* to compare variables in aggregate and generated three different heatmaps for sepal length vs width. Second,for variables petal length vs width I did want to color code each species by tweaking previous code slightly and adding *data* and *hue* parameters.
 
