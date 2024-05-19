@@ -16,13 +16,19 @@ Student at [ATU] (https://www.atu.ie/).
 - [3. Dataset properties](#3-dataset-properties)
 - [4. Graphical representation of data in a histogram](#4-graphical-representation-of-data-in-a-histogram)
 - [5. Graphical representation of data in pairplots](#5-graphical-representation-of-data-in-pairplots)
-- [6. Heatmaps: Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot](#6-heatmaps:-graphical-representation-of-sepal-length-vs-width-&-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
-    * [6.1 Scatter plot](#61-scatter-plot)
-    * [6.2 Bivariate Histogram](#62-bivariate-histogram)
-    * [6.3 Kernel Density Estimate (KDE) plot heatmap](#63-kernel-density-estimate-kde-plot-heatmap)
-- [7. Two variable plot with best fit line](#8-two-variable-plot-with-best-fit-line)
-- [8. Person Correlation Coefficient.](#9-person-correlation-coefficient)
-- [9. References and further readings](#10-references-and-further-readings)
+- [6. Heatmaps: Graphical representation of sepal length vs width & petal length vs width of species combinded in scatter, -hist, & KDE plot](#6-heatmaps-graphical-representation-of-sepal-length-vs-width-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
+   * [6.1 Scatter plot](#61-scatter-plot)
+   * [6.2 Bivariate Histogram](#62-bivariate-histogram)
+   * [6.3 Kernel Density Estimate (KDE) plot heatmap](#63-kernel-density-estimate-kde-plot-heatmap)
+- [7. Two variable plot with best fit line](#7-two-variable-plot-with-best-fit-line)
+- [8. Person Correlation Coefficient.](#8-person-correlation-coefficient)
+- [9. References and further readings:](#9-references-and-further-readings)
+   * [pandas:](#pandas)
+   * [Seaborn:](#seaborn)
+   * [Matplotlib:](#matplotlib)
+   * [NumPy:](#numpy)
+   * [stackoverflow.com:](#stackoverflowcom)
+   * [Miscellaneous:](#miscellaneous)
 
 <!-- TOC end -->
 
@@ -89,7 +95,7 @@ sepal width shows a linearly separable relationship between all the classes, whe
 
 This has also been demonstrated in [Awais Naeem's](https://www.embedded-robotics.com/iris-dataset-classification/) January 27, 2022 published work who used the same Seaborn pairplot function *sns.pairplot()* to perform exploratory data analysis of the Iris dataset.
 
-<!-- TOC --><a name="6-graphical-representation-of-sepal-length-vs-width-&-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot"></a>
+<!-- TOC --><a name="6-heatmaps-graphical-representation-of-sepal-length-vs-width-petal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot"></a>
 ## 6. Heatmaps: Graphical representation of sepal length vs width & petal length vs width of species combinded in scatter, -hist, & KDE plot
 Heatmaps are another useful tool to examine relationships between two different variables. First, instead of color-coding each species, I wanted to explore another Seaborn function *fig, ax = plt.subplots()* to compare variables in aggregate and generated three different heatmaps for sepal length vs width. Second,for variables petal length vs width I did want to color code each species by tweaking previous code slightly and adding *data* and *hue* parameters.
 
@@ -103,10 +109,11 @@ Though not a heatmap I found it relevant to include a scatter plot in this parag
 Strictly speaking not a heatmap but closely related, bivariate histogram bins the data into rectangles that tile the plot, displaying the count of observations within each rectangle using fill color. 
 * *sns.histplot(data=df, x='petal_length', y='petal_width', hue='species', multiple='stack', ax=ax5)*
 
-<!-- TOC --><a name="63-kernel-density-estimate-(kde)-plot-heatmap"></a>
+<!-- TOC --><a name="63-kernel-density-estimate-kde-plot-heatmap"></a>
 ### 6.3 Kernel Density Estimate (KDE) plot heatmap
 A KDE plot heatmap displays data values in a matrix format by using color to represent the density of data points in two dimensions. Instead of showing counts in bins like a traditional 2D histogram, it shows the estimated density of data points.
 * *sns.kdeplot(data=df, x='petal_length', y='petal_width', hue='species', palette="Spectral", fill=True, common_norm=False, ax=ax6)
+
 
 <!-- TOC --><a name="7-two-variable-plot-with-best-fit-line"></a>
 ## 7. Two variable plot with best fit line
@@ -127,10 +134,12 @@ Iris flower data set: https://en.wikipedia.org/wiki/Iris_flower_data_set.
 
 January 27, 2022 Awais Naeem, Iris Dataset Classification using Support Vector Machine, Random Forest, and Gradient Boosting Classifier https://www.embedded-robotics.com/iris-dataset-classification/.
 
+<!-- TOC --><a name="pandas"></a>
 ### pandas:
 
 pandas.DataFrame.groupby https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html.
 
+<!-- TOC --><a name="seaborn"></a>
 ### Seaborn:
 
 Overview of seaborn plotting functions: https://seaborn.pydata.org/tutorial/function_overview.html.
@@ -147,6 +156,7 @@ seaborn.color_palette https://seaborn.pydata.org/generated/seaborn.color_palette
 
 Visualizing distributions of data https://seaborn.pydata.org/tutorial/distributions.html.
 
+<!-- TOC --><a name="matplotlib"></a>
 ### Matplotlib:
 
 matplotlib.pyplot.hist https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html.
@@ -157,12 +167,14 @@ Matplotlib Install an official release https://matplotlib.org/stable/users/insta
 
 matplotlib.pyplot.subplots https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html.
 
+<!-- TOC --><a name="numpy"></a>
 ### NumPy:
 
 numpy.polyfit https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html#numpy-polyfit.
 
 numpy.linspace https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy-linspace.
 
+<!-- TOC --><a name="stackoverflowcom"></a>
 ### stackoverflow.com:
 
 Directing print output to a .txt file: https://stackoverflow.com/questions/36571560/directing-print-output-to-a-txt-file.
@@ -179,6 +191,7 @@ Plotting a heatmap based on a scatterplot in Seaborn https://stackoverflow.com/q
 
 How to plot in multiple subplots? https://stackoverflow.com/questions/31726643/how-to-plot-in-multiple-subplots.
 
+<!-- TOC --><a name="miscellaneous"></a>
 ### Miscellaneous:
 
 Plotting Histogram in Python using Matplotlib: https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/.
