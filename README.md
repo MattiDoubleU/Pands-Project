@@ -16,13 +16,13 @@ Student at [ATU] (https://www.atu.ie/).
 - [3. Dataset properties](#3-dataset-properties)
 - [4. Graphical representation of data in a histogram](#4-graphical-representation-of-data-in-a-histogram)
 - [5. Graphical representation of data in pairplots](#5-graphical-representation-of-data-in-pairplots)
-- [6. Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot](#6-graphical-representation-of-sepal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
+- [6. Heatmaps: Graphical representation of sepal length vs width of species combinded in scatter, -hist, & KDE plot](#6-heatmaps:-graphical-representation-of-sepal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot)
     * [6.1 Scatter plot](#61-scatter-plot)
-    * [6.2 Histogram](#62-histogram)
-    * [6.3 Kernel Density Estimate (KDE) plot](#63-kernel-density-estimate-kde-plot)
+    * [6.2 Bivariate Histogram](#62-bivariate-histogram)
+    * [6.3 Kernel Density Estimate (KDE) plot heatmap](#63-kernel-density-estimate-kde-plot-heatmap)
 - [7. Two variable plot with best fit line](#8-two-variable-plot-with-best-fit-line)
 - [8. Person Correlation Coefficient.](#9-person-correlation-coefficient)
-- [9. References and further readings:](#10-references-and-further-readings)
+- [9. References and further readings](#10-references-and-further-readings)
 
 <!-- TOC end -->
 
@@ -70,7 +70,7 @@ As per the project instructions, a histogram for each variable is required. For 
 
 To demonstrate how bar opacity varies with different values, I utilized descending alpha values, to show opacity decreases with smaller values.
 
-The four histograms provide clear insights:
+Clear insights the four histograms provide:
 * Virginica species exhibits the largest petal width, petal length, and sepal length on average.
 * On the contrary, Setosa species, although having the smallest petal width and length, features the largest sepal width among the three species.
 
@@ -81,7 +81,7 @@ I decided to use Seaborn's pairplot function *sns.pairplot()*: A single line of 
 Let's examine the plots to identify some useful insights and patterns from the dataset:
 
 Kde plots for petal width and petal length show that Iris Setosa can be distinguished from Iris Versicolor and Iris Virginica using either of these features.
-It is the Setosa species that yypically has smaller sepal lengths and widths, often forming a tight cluster in the lower left of the scatter plot.
+It is the Setosa species that typically has smaller sepal lengths and widths, often forming a tight cluster in the lower left of the scatter plot.
 On the contrary Versicolor and Virginica species usually have larger sepal lengths and widths, with Virginica generally being the largest. They form separate clusters that might overlap.
 Scatter plot between petal width and petal length reveals a linear relationship. Additionally, this relationship allows for linear separation of all the classes.
 When petal width/length is plotted against sepal width/length, Iris Setosa is clearly separated from Iris Versicolor and Iris Virginica.
@@ -91,18 +91,22 @@ This has also been demonstrated in [Awais Naeem's](https://www.embedded-robotics
 
 <!-- TOC --><a name="6-graphical-representation-of-sepal-length-vs-width-of-species-combinded-in-scatter-hist-kde-plot"></a>
 ## 6. Heatmaps: Graphical representation of sepal length vs width & petal length vs width of species combinded in scatter, -hist, & KDE plot
-tba, tba
+Heatmaps are another useful tool to examine relationships between two different variables. First, instead of color-coding each species, I wanted to explore another Seaborn function *fig, ax = plt.subplots()* to compare variables in aggregate and generated three different heatmaps for sepal length vs width. Second,for variables petal length vs width I did want to color code each species by tweaking previous code slightly and adding *data* and *hue* parameters.
 
 <!-- TOC --><a name="61-scatter-plot"></a>
 ### 6.1 Scatter plot
-tba, tba
+Though not a heatmap I found it relevant to include a scatter plot in this paragraph for a lean 2x3 output figure so the same data can be easily compared through different visualization techniques. 
+* *sns.scatterplot(data=df, x='petal_length', y='petal_width', hue='species', ax=ax4)*
 
-<!-- TOC --><a name="62-histogram"></a>
-### 6.2 Histogram
-tba, tba
+<!-- TOC --><a name="62-bivariate-histogram"></a>
+### 6.2 Bivariate Histogram
+Strictly speaking not a heatmap but closely related, bivariate histogram bins the data into rectangles that tile the plot, displaying the count of observations within each rectangle using fill color. 
+* *sns.histplot(data=df, x='petal_length', y='petal_width', hue='species', multiple='stack', ax=ax5)*
 
-<!-- TOC --><a name="63-kernel-density-estimate-(kde)-plot"></a>
-### 6.3 Kernel Density Estimate (KDE) plot
+<!-- TOC --><a name="63-kernel-density-estimate-(kde)-plot-heatmap"></a>
+### 6.3 Kernel Density Estimate (KDE) plot heatmap
+A KDE plot heatmap displays data values in a matrix format by using color to represent the density of data points in two dimensions. Instead of showing counts in bins like a traditional 2D histogram, it shows the estimated density of data points.
+* *sns.kdeplot(data=df, x='petal_length', y='petal_width', hue='species', palette="Spectral", fill=True, common_norm=False, ax=ax6)
 
 <!-- TOC --><a name="7-two-variable-plot-with-best-fit-line"></a>
 ## 7. Two variable plot with best fit line
@@ -136,6 +140,12 @@ seaborn.pairplot https://seaborn.pydata.org/generated/seaborn.pairplot.html.
 Choosing color palettes https://seaborn.pydata.org/tutorial/color_palettes.html.
 
 seaborn.axes_style https://seaborn.pydata.org/generated/seaborn.axes_style.html
+
+seaborn.scatterplot https://seaborn.pydata.org/generated/seaborn.scatterplot.html.
+
+seaborn.color_palette https://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette. 
+
+Visualizing distributions of data https://seaborn.pydata.org/tutorial/distributions.html.
 
 ### Matplotlib:
 
