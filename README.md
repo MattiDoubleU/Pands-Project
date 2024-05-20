@@ -21,8 +21,8 @@ Student at [ATU] (https://www.atu.ie/).
    * [6.2 Bivariate Histogram](#62-bivariate-histogram)
    * [6.3 Kernel Density Estimate (KDE) plot heatmap](#63-kernel-density-estimate-kde-plot-heatmap)
 - [7. Two variable plot with best fit line](#7-two-variable-plot-with-best-fit-line)
-- [8. Person Correlation Coefficient.](#8-person-correlation-coefficient)
-- [9. References and further readings:](#9-references-and-further-readings)
+- [8. Pearson Correlation Coefficient](#8-pearson-correlation-coefficient)
+- [9. References and further readings](#9-references-and-further-readings)
    * [pandas:](#pandas)
    * [Seaborn:](#seaborn)
    * [Matplotlib:](#matplotlib)
@@ -114,21 +114,24 @@ Strictly speaking not a heatmap but closely related, bivariate histogram bins th
 A KDE plot heatmap displays data values in a matrix format by using color to represent the density of data points in two dimensions. Instead of showing counts in bins like a traditional 2D histogram, it shows the estimated density of data points.
 * *sns.kdeplot(data=df, x='petal_length', y='petal_width', hue='species', palette="Spectral", fill=True, common_norm=False, ax=ax6)
 
+## 7. Graphical representation: Distribution plot
+Another graphical representation I was keen to explore is the distribution plot. It is used to visualize the distribution of a single variable (or the relationship between multiple variables), here *petal_lenght*. Distribution plots help in understanding the underlying frequency or probability distribution of the data. I used bins size 30 *bins=30* to provide a more detailed view of the data.
+*sns.displot(df, x="petal_length", hue="species", bins=30)*
+
 
 <!-- TOC --><a name="7-two-variable-plot-with-best-fit-line"></a>
-## 7. Two variable plot with best fit line
-* tba
-* tba
-* tba
+## 8. Two variable plot with best fit line
+I wanted to demonstrate the application of a best-fit line (or regression line) to summarize the overall trend between two variables, sepal length vs petal width.  The line clearly slopes upwards from left to right what suggests a positive correlation, meaning that longer sepals are associated with wider petals.
 
-<!-- TOC --><a name="8-person-correlation-coefficient"></a>
-## 8. Person Correlation Coefficient.
-* tba
-* tba
-* tba
+<!-- TOC --><a name="8-pearson-correlation-coefficient"></a>
+## 9. Pearson Correlation Coefficient
+SSince I have modeled a straight line on the scatter plot in section 7, which visualizes a positive correlation between sepal length and petal width, it is logical to further quantify this relationship by computing the Pearson Correlation Coefficient. This coefficient, which measures the strength and direction of the linear relationship between the two variables, is calculated to be 0.82. This high value confirms what the straight line visually suggests: a strong positive relationship between sepal length and petal width. 
+
+## 10. Conclusion
+tba
 
 <!-- TOC --><a name="9-references-and-further-readings"></a>
-## 9. References and further readings:
+## 11. References and further readings:
 
 Iris flower data set: https://en.wikipedia.org/wiki/Iris_flower_data_set.
 

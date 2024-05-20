@@ -125,7 +125,7 @@ axs[1, 1].legend()
 plt.tight_layout()
 
 # Save the figure as a single .png file
-plt.savefig('histograms_all_variables.png')
+plt.savefig('histograms_all_variables')
 
 # Show plot
 plt.show()
@@ -171,8 +171,11 @@ plt.savefig('heatmaps')
 # Show plot.
 plt.show()
 
-# Conditioning on other variables.
-sns.displot(df, x="petal_length", hue="species")
+# Distribution plot.
+sns.displot(df, x="petal_length", hue="species", bins=30)
+
+# Save to png.
+plt.savefig('distribution_plot')
 
 # Show plot.
 plt.show()
