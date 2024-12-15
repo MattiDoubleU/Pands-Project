@@ -1,4 +1,4 @@
-# pands-project
+# Pands-Project
 
 **by Matthias Wiedemann**
 
