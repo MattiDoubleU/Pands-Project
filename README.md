@@ -2,7 +2,7 @@
 
 **by Matthias Wiedemann**
 
-Student at [ATU] (https://www.atu.ie/).
+Student at [ATU](https://www.atu.ie/).
 
 <img src="https://www.embedded-robotics.com/wp-content/uploads/2022/01/Iris-Dataset-Classification-1024x367.png">
 
